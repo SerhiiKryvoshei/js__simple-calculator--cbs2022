@@ -520,11 +520,18 @@ body {
 
 /* -------------max-width: 576px------------------ */
 @media (max-width: 576px) {
+	.header {
+		margin-bottom: 10px;
+	}
+
 	.header__inner {
-		height: 150px;
+		height: 80px;
 		flex-direction: column;
 	}
 
+	.header__subtitle {
+		display: none;
+	}
 	.title {
 		font-size: 32px;
 	}
@@ -540,6 +547,13 @@ body {
 
 	.btn {
 		display: none;
+	}
+
+	.footer {
+		padding: 57px;
+	}
+	.footer__pic {
+		width: 70px;
 	}
 }
 
