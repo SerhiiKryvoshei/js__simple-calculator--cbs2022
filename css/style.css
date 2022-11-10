@@ -549,6 +549,21 @@ body {
 		display: none;
 	}
 
+	.calculator__btn-row {
+		margin-bottom: 14px;
+	}
+
+	.calculator__ellipse {
+		width: 70px;
+		height: 70px;
+	}
+
+	.calculator__ellipse--width {
+		width: 144px;
+		border-radius: 140px;
+		padding-left: 22px;
+	}
+
 	.footer {
 		padding: 57px;
 	}
