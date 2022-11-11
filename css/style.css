@@ -442,6 +442,7 @@ body {
 .calculator__toggle {
 	height: 41px;
 }
+
 .calculator__result {
 	height: 167px;
 	display: flex;
@@ -455,6 +456,7 @@ body {
 	border-bottom: 1px solid #d9d9d9;
 	padding: 0 15px;
 	margin-bottom: 10px;
+	user-select: none;
 }
 
 .calculator__btn-row {
@@ -462,6 +464,7 @@ body {
 	justify-content: space-around;
 	margin-bottom: 7px;
 }
+
 .calculator__ellipse {
 	width: 80px;
 	height: 80px;
@@ -475,6 +478,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	user-select: none;
 }
 
 .calculator__ellipse--orange {
@@ -574,6 +578,7 @@ body {
 	.title {
 		font-size: 28px;
 	}
+
 	.subtitle {
 		font-size: 20px;
 	}
