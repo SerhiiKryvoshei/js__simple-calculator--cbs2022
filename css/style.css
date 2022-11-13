@@ -470,6 +470,10 @@ body {
 	user-select: none;
 }
 
+.calculator__screen-last {
+	font-size: 32px;
+}
+
 .calculator__btn-row {
 	display: flex;
 	justify-content: space-around;
