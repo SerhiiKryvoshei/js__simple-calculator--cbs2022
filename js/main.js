@@ -58,6 +58,14 @@ function numbersHandler(e) {
 
 	if (userInput.length > 8) return;
 
+	if (num == "+/-") {
+		if (userInput[0] == "-") {
+			userInput.shift();
+		} else userInput.unshift("-");
+		updateScreen();
+		return;
+	}
+
 	if (shouldClearScreenCurrent) clearScreenCurrent();
 	userInput.push(num);
 	updateScreen();
@@ -72,6 +80,7 @@ function operatorsHandler(e) {
 		return;
 	}
 	if (inputOperation == "X") currentOperation = "*";
+	else if (inputOperation == "÷") currentOperation = "/";
 	else currentOperation = inputOperation;
 
 	stack = screen;
@@ -81,11 +90,8 @@ function operatorsHandler(e) {
 
 function equalsHandler(e) {
 	if (stack == null) return;
-
 	let result = doMath(stack, screen, currentOperation);
-	stack = null;
-	stackOperation;
-	screenLast.textContent = "";
+	initializationCalculator();
 	updateScreen(result);
 }
 
