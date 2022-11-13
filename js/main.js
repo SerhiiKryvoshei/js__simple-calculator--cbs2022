@@ -1,5 +1,5 @@
-const output1 = document.querySelector(".calculator__output1");
-const output2 = document.querySelector(".calculator__output2");
+const screenLast = document.querySelector(".calculator__screen-last");
+const screenCurrent = document.querySelector(".calculator__screen-current");
 
 const buttons = document.querySelectorAll(".calculator__ellipse");
 const numberButtons = document.querySelectorAll(".number");
@@ -24,7 +24,7 @@ function numbersHandler() {
 
 function updateScreen() {
 	screen = userInput.join("");
-	output2.textContent = screen;
+	screenCurrent.textContent = screen;
 }
 
 setHandlers();
