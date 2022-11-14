@@ -628,4 +628,10 @@ body {
 		height: 133px;
 	}
 }
+
+@media only screen and (orientation: landscape) and (max-width: 915px) {
+	.wrapper {
+		height: 100%;
+	}
+}
 /* #endregion */
