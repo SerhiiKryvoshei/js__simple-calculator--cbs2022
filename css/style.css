@@ -141,6 +141,8 @@ select {
 	--bg-input-color: rgba(35, 82, 222, 0.1);
 	--bs-form-color: rgba(158, 158, 158, 0.25);
 	--bg-ellipse-orange: #ffb800;
+	--bg-ellipse-gray: #aeaeae;
+	--bg-ellipse-dark: #6d6d6d;
 }
 
 /* #endregion variables -------------------------------------------------------*/
@@ -460,7 +462,7 @@ body {
 .calculator__checkbox-theme {
 	position: absolute;
 	top: 50%;
-	right: 20px;
+	right: 5px;
 	transform: translate(-50%);
 }
 
@@ -469,7 +471,7 @@ body {
 	width: 37px;
 	height: 17px;
 	border-radius: 12px;
-	background-color: var(--bg-color);
+	background-color: var(--bg-ellipse-gray);
 	box-shadow: inset 0 0 10px 0 var(--bg-section-color);
 	padding: 0;
 	border: none;
