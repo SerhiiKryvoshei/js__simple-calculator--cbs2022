@@ -194,6 +194,7 @@ body {
 /* #region section-------------------------------------------------------------*/
 
 .wrapper {
+	width: 100%;
 	height: 100vh;
 }
 
@@ -634,4 +635,23 @@ body {
 		height: 100%;
 	}
 }
+
+@media (max-height: 815px) {
+	.section {
+		padding: 20px;
+	}
+
+	.header {
+		display: none;
+	}
+
+	.footer {
+		padding: 50px;
+	}
+
+	.footer__pic {
+		width: 70px;
+	}
+}
+
 /* #endregion */
