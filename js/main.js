@@ -1,3 +1,4 @@
+const calculator = document.querySelector(".calculator");
 const btnTheme = document.querySelector(".calculator__btn-theme");
 const screenLast = document.querySelector(".calculator__screen-last");
 const screenCurrent = document.querySelector(".calculator__screen-current");
@@ -48,7 +49,10 @@ function setHandlers() {
 //#region Event Handlers ----------------------------------------------------------
 
 function toggleThemeHandler() {
+	calculator.classList.toggle("dark");
 	btnTheme.classList.toggle("dark");
+	numberButtons.forEach(btn => btn.classList.toggle("dark"));
+	operatorButtons.forEach(btn => btn.classList.toggle("dark"));
 }
 
 function keyboardInputHandler(e) {
