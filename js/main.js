@@ -157,8 +157,12 @@ function doMath(a, b, operator) {
 			return a % b;
 		case "/":
 			if (b == 0) return `division by zero is not possible`;
-			return a / b;
+			return roundResult(a / b);
 	}
+}
+
+function roundResult(result) {
+	return Math.round(result * 1000) / 1000;
 }
 
 //#endregion
