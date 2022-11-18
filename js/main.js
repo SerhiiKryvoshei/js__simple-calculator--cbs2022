@@ -46,11 +46,28 @@ function setHandlers() {
 
 function keyboardInputHandler(e) {
 	if (e.key >= 0 && e.key <= 9) {
+		if (shouldClearScreenCurrent) clearScreenCurrent();
 		userInput.push(e.key);
 		updateScreen();
+	} else if (e.key === "Escape") {
+		initializationCalculator();
+	} else if (e.key === "Backspace" || e.key === "Delete") {
+		deleteNumber();
+	} else if (e.key === "=" || e.key === "Enter") {
+		equalsHandler();
+	} else if (
+		e.key === "+" ||
+		e.key === "-" ||
+		e.key === "*" ||
+		e.key === "/" ||
+		e.key === "%"
+	) {
+		inputOperation = e.key;
+		currentOperation = inputOperation;
+		stack = screen;
+		screenLast.textContent = `${screenCurrent.textContent} ${inputOperation}`;
+		shouldClearScreenCurrent = true;
 	}
-	if (e.key === "Escape") initializationCalculator();
-	if (e.key === "Backspace" || e.key === "Delete") deleteNumber();
 }
 
 function numbersHandler(e) {
@@ -128,6 +145,8 @@ function doMath(a, b, operator) {
 			return a - b;
 		case "*":
 			return a * b;
+		case "%":
+			return a % b;
 		case "/":
 			return a / b;
 	}
