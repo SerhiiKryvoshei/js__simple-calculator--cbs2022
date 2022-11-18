@@ -1,3 +1,4 @@
+const btnTheme = document.querySelector(".calculator__btn-theme");
 const screenLast = document.querySelector(".calculator__screen-last");
 const screenCurrent = document.querySelector(".calculator__screen-current");
 let currentFontSize = screenCurrent.style.fontSize;
@@ -32,6 +33,7 @@ function initializationCalculator() {
 }
 
 function setHandlers() {
+	btnTheme.addEventListener("click", toggleThemeHandler);
 	document.addEventListener("keydown", keyboardInputHandler);
 
 	numberButtons.forEach(btn => btn.addEventListener("click", numbersHandler));
@@ -44,6 +46,10 @@ function setHandlers() {
 //#endregion
 
 //#region Event Handlers ----------------------------------------------------------
+
+function toggleThemeHandler() {
+	btnTheme.classList.toggle("dark");
+}
 
 function keyboardInputHandler(e) {
 	if (e.key >= 0 && e.key <= 9) {
