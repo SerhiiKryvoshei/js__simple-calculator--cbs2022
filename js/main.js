@@ -1,5 +1,6 @@
 const screenLast = document.querySelector(".calculator__screen-last");
 const screenCurrent = document.querySelector(".calculator__screen-current");
+let currentFontSize = screenCurrent.style.fontSize;
 
 const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
@@ -33,8 +34,8 @@ function initializationCalculator() {
 function setHandlers() {
 	document.addEventListener("keydown", keyboardInputHandler);
 
-	numberButtons.forEach((btn) => btn.addEventListener("click", numbersHandler));
-	operatorButtons.forEach((btn) =>
+	numberButtons.forEach(btn => btn.addEventListener("click", numbersHandler));
+	operatorButtons.forEach(btn =>
 		btn.addEventListener("click", operatorsHandler)
 	);
 	equalsBtn.addEventListener("click", equalsHandler);
@@ -72,6 +73,7 @@ function keyboardInputHandler(e) {
 
 function numbersHandler(e) {
 	let num = this.outerText;
+	screenCurrent.style.fontSize = currentFontSize;
 
 	if (userInput.length > 8) return;
 
@@ -117,8 +119,14 @@ function equalsHandler(e) {
 //#region Service Functions -------------------------------------------------------
 
 function updateScreen(result) {
-	if (arguments.length > 0) screen = result;
-	else screen = userInput.join("");
+	if (arguments.length > 0 && !Number.isFinite(result)) {
+		initializationCalculator();
+		screenCurrent.style.fontSize = "18px";
+		screenCurrent.textContent = result;
+		return;
+	} else if (arguments.length > 0) {
+		screen = result;
+	} else screen = userInput.join("");
 
 	screenCurrent.textContent = screen;
 }
@@ -148,6 +156,7 @@ function doMath(a, b, operator) {
 		case "%":
 			return a % b;
 		case "/":
+			if (b == 0) return `division by zero is not possible`;
 			return a / b;
 	}
 }
