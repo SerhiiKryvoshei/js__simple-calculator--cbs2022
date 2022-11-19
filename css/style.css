@@ -200,6 +200,10 @@ body {
 /* #region section-------------------------------------------------------------*/
 
 .wrapper {
+	background-image: url("../images/stanley-whitney-bomb-5-cover.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 	width: 100%;
 	height: 100vh;
 }
